@@ -9,7 +9,7 @@ dockerを使用し、WordPressの設定、テーマ、データベースの状�
 
 ## dockerの初期セットアップ
 
-boot2dockerを使用します（dockerも一緒に入ります）
+[VirtualBox](https://www.virtualbox.org/)とboot2dockerを使用します（dockerも一緒に入ります）
 
 ```
 $ brew install boot2docker
