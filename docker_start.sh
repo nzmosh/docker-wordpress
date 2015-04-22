@@ -3,7 +3,7 @@
 path=`pwd`
 dir=`basename $path`
 
-docker ps -a -q | xargs docker rm -f
+docker rm -f $dir
 
 docker build -t $dir .
 
