@@ -7,7 +7,9 @@ dockerを使用し、WordPressの設定、テーマ、データベースの状�
 - [tutum-docker-wordpress](https://github.com/tutumcloud/tutum-docker-wordpress)
 - [docker](https://www.docker.com/)
 
-## dockerの初期セットアップ（boot2dockerを使用します）
+## dockerの初期セットアップ
+
+boot2dockerを使用します
 
 ```
 $ brew install boot2docker
