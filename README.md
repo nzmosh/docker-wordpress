@@ -78,6 +78,9 @@ Gitに登録するファイルは
 
 の3つです。  
 
+`./docker-mysqldump.sh`を実行するとWordPressコンテナ内DBのダンプファイルが生成されます。  
+`wp-config.php`と`wp-content`はWordPressコンテナと共有しているので、変更はすぐに反映されます。
+
 ```
 $ ./docker-mysqldump.sh
 $ git add mysql.dump.sql wp-config.php wp-content
