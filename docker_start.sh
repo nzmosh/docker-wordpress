@@ -16,3 +16,4 @@ docker run -i -t -d -p 80:80 --name=$dir \
 echo "======================"
 echo "Open $(boot2docker ip)"
 echo "======================"
+

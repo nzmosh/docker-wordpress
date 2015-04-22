@@ -3,5 +3,6 @@
 path=`pwd`
 dir=`basename $path`
 
-docker kill $dir
+docker rm -f $dir
+docker rmi -f $dir
 
