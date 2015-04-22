@@ -30,6 +30,24 @@ $ boot2docker start
 $ git clone git@github.com:mgaoshima/docker-wordpress.git yoursitename
 $ cd yoursitename
 $ chmod +x docker_*.sh
+```
+
+プロジェクトのリポジトリを新たに作成して下さい。
+
+```
+$ rm -rf .git
+```
+
+[`hub`](https://github.com/github/hub)が入っている場合は
+```
+$ git create yoursitename
+$ git init && git add -A . && git commit -m init
+$ git push -u origin master
+```
+
+WordPressコンテナをビルドして実行します。
+
+```
 $ ./docker_build.sh
 $ ./docker_start.sh
 ```
