@@ -3,10 +3,6 @@
 path=`pwd`
 dir=`basename $path`
 
-docker rm -f $dir
-
-docker build -t $dir .
-
 docker run -i -t -d -p 80:80 --name=$dir \
   -v $(pwd)/wp-content:/app/wp-content \
   -v $(pwd)/wp-config.php:/app/wp-config.php \
