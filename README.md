@@ -49,7 +49,6 @@ WordPressコンテナをビルドして実行します。
 
 ```
 $ ./docker_build.sh
-$ ./docker_start.sh
 ```
 
 終了したら下記を実行するとWordPressの初期設定画面が立ち上がります  
@@ -60,13 +59,14 @@ $ open -a Google\ Chrome "http://$(boot2docker ip)"
 ```
 
 テーマ開発中は基本的に立ち上げっぱなしで大丈夫です。  
-`git pull`した際は変更を反映するために、
-再度`./docker_build.sh && ./docker_start.sh`を実行して下さい。
+`git pull`した際は変更を反映するために、再度`./docker_build.sh`を実行して下さい。
 
 `./docker_build.sh`を実行すると、それまでの変更を破棄してコンテナを再構築するので、
 DBの変更を保持する場合は予め`./docker_mysqldump.sh`を実行して下さい。
 
-開発が終わったら`./docker_stop.sh`でWordPressコンテナを停止させます。
+- 開発が終わったら`./docker_stop.sh`でWordPressコンテナを停止させます。
+- 開発を再開する場合は`./docker_start.sh`でWordPressコンテナを再開させます。
+- コンテナを完全に破棄する場合は`./docker_destroy.sh`で完全に破棄します。
 
 ## 変更内容をコミットする
 
@@ -82,19 +82,4 @@ Gitに登録するファイルは
 $ ./docker-mysqldump.sh
 $ git add mysql.dump.sql wp-config.php wp-content
 $ git commit
-```
-
-## WordPressコンテナを停止する
-
-```
-$ ./docker_stop.sh
-```
-
-## WordPressコンテナを破棄する
-
-WordPressコンテナを停止し、ビルドしたイメージを破棄します。  
-**それまでの変更内容が破棄されます**
-
-```
-$ ./docker_destroy.sh
 ```
