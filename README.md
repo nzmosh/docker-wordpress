@@ -40,8 +40,8 @@ $ rm -rf .git
 
 [`hub`](https://github.com/github/hub)が入っている場合は
 ```
-$ git create yoursitename
 $ git init && git add -A . && git commit -m init
+$ git create
 $ git push -u origin master
 ```
 
