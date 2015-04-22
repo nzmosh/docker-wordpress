@@ -9,10 +9,17 @@ dockerを使用し、WordPressの設定、テーマ、データベースの状�
 
 ## dockerの初期セットアップ
 
-boot2dockerを使用します
+boot2dockerを使用します（dockerも一緒に入ります）
 
 ```
 $ brew install boot2docker
+$ boot2docker init
+$ boot2docker start
+
+// 下記を指示通りに.bash_profileなどに追加（mgaoshimaは読みかえて下さい）
+// $ export DOCKER_HOST=tcp://192.168.59.103:2376
+// $ export DOCKER_CERT_PATH=/Users/mgaoshima/.boot2docker/certs/boot2docker-vm
+// $ export DOCKER_TLS_VERIFY=1
 ```
 
 ## WordPressコンテナのビルドと立ち上げ
@@ -22,12 +29,13 @@ $ brew install boot2docker
 ```
 $ git clone git@github.com:mgaoshima/docker-wordpress.git yoursitename
 $ cd yoursitename
-$ chmod +x *.sh
+$ chmod +x docker_*.sh
 $ ./docker_build.sh
 $ ./docker_start.sh
 ```
 
-上記が終了したらWordPressが立ち上がります（サーバとMySQLが立ち上がるまで少し時間がかかります）
+終了したら下記を実行するとWordPressの初期設定画面が立ち上がります  
+※サーバとMySQLが立ち上がるまで少し時間がかかる場合があります
 
 ```
 $ open -a Google\ Chrome "http://$(boot2docker ip)"
